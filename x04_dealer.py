@@ -1,5 +1,5 @@
 #!python3
-
+import x02_value
 '''
 In Blackjack, the dealer always must follow the same rules.
 
@@ -23,7 +23,17 @@ def dealer(deck):
   You may need to use the function in problem 2 to count the score
   it will then return a list
   '''
-  
+  dealer = []
+  while x02_value.value(dealer) < 21:
+    for i in range(0,5):
+      dealer.append(deck[i])
+
+      if x02_value.value(dealer) > 21:
+        dealer.pop(len(dealer)-1)
+        break
+
+  print(dealer)
+
   return [ dealer , score , deck ]
 
 def main():
@@ -31,4 +41,7 @@ def main():
   run1 = dealer(deck)
   assert dealer(deck) == [['3C', '3S', '8S', '3D'], 17, run1[2] ]
   run2 = dealer( run1[2] )
-  assert dealer(run1[2]) == [['AC', '9H'], 20, run2[2] )
+  assert dealer(run1[2]) == [['AC', '9H'], 20, run2[2] ]
+
+if __name__ == "__main__":
+  main()

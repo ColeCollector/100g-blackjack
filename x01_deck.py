@@ -11,6 +11,9 @@ def createDeck():
   suits = ['C','D','H','S']
   deck = []
   
+  for i in ranks:
+    for n in range(0,4):
+      deck.append(f"{i}{suits[n]}")
   return deck
   
   '''
