@@ -28,10 +28,8 @@ def value(hand):
      x1 = x1 + 10
 
   if x == x1:
-    print(x)
     return x
   else:
-    print(x,x1)
     return [x,x1]
 
 
@@ -41,5 +39,5 @@ def main():
   assert value(['3D','8H']) == 11
   assert value(['KC','6S','QD']) == 26
 
-if __name__ == "__name__":
+if __name__ == "__main__":
   main()
